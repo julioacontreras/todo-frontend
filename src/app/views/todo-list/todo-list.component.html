@@ -1,0 +1,3 @@
+<input-text placeHolder="Clean de house" (addItem)="addItem($event)" />
+<div class="w-full h-3"></div>
+<list [list]="list()" (deleteItem)="deleteItem($event)" (setIsCompleted)="setIsCompleted($event)" />

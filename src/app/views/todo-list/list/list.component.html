@@ -1,0 +1,25 @@
+<div *ngIf="list" class="flex flex-col gap-2 w-full overflow-scroll max-h-96">
+  <p class="text-sm font-semibold pb-2 text-gray-500 w-full">TODO</p>
+  <item *ngFor="let item of filterByTodo()" [item]="item" 
+    (deleteItem)="deleteItem.emit($event)"
+    (setIsCompleted)="setIsCompleted.emit($event)"
+  />
+  <div *ngIf="filterByTodo().length === 0" class="w-full text-center">
+    <p class="text-gray-500">No items todo</p>
+  </div>
+
+
+  <p class="text-sm font-semibold pb-2 pt-2 text-gray-500 w-full">COMPLETED</p>
+  <item *ngFor="let item of filterByCompleted()" [item]="item" 
+    (deleteItem)="deleteItem.emit($event)"
+    (setIsCompleted)="setIsCompleted.emit($event)"
+  />
+  <div *ngIf="filterByCompleted().length === 0" class="w-full text-center">
+    <p class="text-gray-500">No items completed</p>
+  </div>
+  
+</div>
+<div *ngIf="list === undefined" class="w-full text-center">
+  <p class="text-gray-500">No items found</p>
+</div>
+

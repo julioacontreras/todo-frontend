@@ -1,0 +1,3 @@
+.box:has(:not(.isCompleted:checked)) {
+  background-color: white
+}

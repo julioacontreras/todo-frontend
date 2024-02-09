@@ -1,0 +1,18 @@
+<div
+  class="relative flex overflow-hidden w-full h-12 text-black rounded-lg bg-white"
+>
+  <input
+    (keyup)="setValue($event)"
+    type="text"
+    class="absolute p-2 w-full h-12 outline outline-offset-2 outline-0"
+    placeholder="{{ placeHolder }}"
+    value="{{ value() }}"
+  />
+  <button
+    (click)="click()"
+    type="button"
+    class="absolute z-10 right-0 p-2 w-20 h-12 bg-pink-500 rounded-r-lg text-white animate-slide-to-left font-semibold"
+  >
+    Add
+  </button>
+</div>

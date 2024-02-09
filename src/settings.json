@@ -1,0 +1,12 @@
+{
+  "cqrs": {
+    "command": {
+      "create-item": "http://0.0.0.0:4010/api/command/create-item",
+      "delete-item": "http://0.0.0.0:4010/api/command/delete-item",
+      "set-is-completed": "http://0.0.0.0:4010/api/command/set-is-completed"
+    },
+    "query": {
+      "get-items": "http://0.0.0.0:4010/api/query/get-items"
+    }
+  }
+}
