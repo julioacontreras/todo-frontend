@@ -6,7 +6,7 @@
     type="text"
     class="absolute p-2 w-full h-12 outline outline-offset-2 outline-0"
     placeholder="{{ placeHolder }}"
-    value="{{ value() }}"
+    [ngModel]="value"
   />
   <button
     (click)="click()"
