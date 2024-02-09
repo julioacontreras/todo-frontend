@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../../types/item';
-import Settings from '../../settings.json';
 import { ItemToCreate } from '../../types/itemToCreate';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,23 +12,23 @@ export class ItemRepositoryService {
   constructor() { }
 
   async getItems(): Promise<Item[]> {
-    const response = await fetch(Settings.cqrs.query['get-items'])
+    const response = await fetch(environment.endpoints.query.getItems)
     return await response.json() as Item[]
   }
 
   async deleteItem(id: string): Promise<void> {
     const body = JSON.stringify({ data: { id } })
-    await fetch(Settings.cqrs.command['delete-item'], { method: 'POST', body, headers: this.headers })
+    await fetch(environment.endpoints.command.deleteItem, { method: 'POST', body, headers: this.headers })
   }
 
   async createItem(item: ItemToCreate): Promise<void> {
     const body = JSON.stringify({ data: item })
-    await fetch(Settings.cqrs.command['create-item'], { method: 'POST', body, headers: this.headers })
+    await fetch(environment.endpoints.command.createItem, { method: 'POST', body, headers: this.headers })
   }
 
   async setIsCompleted(id: string, isCompleted: boolean): Promise<void> {
     const body = JSON.stringify({ data: { id, isCompleted } })
-    await fetch(Settings.cqrs.command['set-is-completed'], { method: 'POST', body, headers: this.headers })
+    await fetch(environment.endpoints.command.setIsComplete, { method: 'POST', body, headers: this.headers })
   }
 
 }

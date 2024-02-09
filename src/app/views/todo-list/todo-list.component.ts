@@ -8,7 +8,7 @@ import { InputTextComponent } from '../../components/input-text/input-text.compo
 import { ListComponent } from './list/list.component';
 
 // directives
-import { ItemRepositoryService } from '../../services/item-repository.service';
+import { ItemRepositoryService } from '../../services/http-client.service';
 import { ResponseIsCompleted } from '../../../types/responseIsCompleted';
 
 @Component({

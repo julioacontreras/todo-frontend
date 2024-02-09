@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ItemRepositoryService } from './item-repository.service';
+import { ItemRepositoryService } from './http-client.service';
 
 describe('CrudItemService', () => {
   let service: ItemRepositoryService;
