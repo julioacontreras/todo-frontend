@@ -7,8 +7,10 @@ import { Item } from '../../../types/item';
 import { InputTextComponent } from '../../components/input-text/input-text.component';
 import { ListComponent } from './list/list.component';
 
-// directives
+// services
 import { ItemRepositoryService } from '../../services/http-client.service';
+
+// types
 import { ResponseIsCompleted } from '../../../types/responseIsCompleted';
 
 @Component({
